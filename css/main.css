@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+/*COMMON*/
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  background: #53a2fa;
+}
+
+.layout {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  border-radius: 20px;
+  background: rgb(143, 235, 135);
+  transform: translate(-50%, -50%);
+}
