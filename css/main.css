@@ -42,7 +42,7 @@ body {
 
 /* today */
 .today .date {
-  font-size: 2.4em;
+  font-size: 2em;
   margin: 0.5rem;
 }
 
@@ -67,7 +67,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 0 2rem;
-  margin: 2rem 0 0.2rem 0;
+  margin: 1rem 0 0.2rem 0;
 }
 
 .todo .todo__items .partition {
@@ -77,11 +77,13 @@ body {
   background: #fff;
 }
 
-.todo .todo__items .todo__item .todo__date i {
+.todo .todo__items .todo__item i {
+  width: 20px;
+  height: 20px;
   transition: transform 300ms;
 }
 
-.todo .todo__items .todo__item .todo__date i:hover {
+.todo .todo__items .todo__item i:hover {
   color: #ff0000;
   transform: scale(1.2);
 }
@@ -89,10 +91,11 @@ body {
 /* to-do-Input */
 .input-wrap {
   margin-top: 1.5rem;
+  display: flex;
 }
 
 .input-wrap input {
-  width: 100%;
+  flex: 1 1 0;
   height: 1.5rem;
   background: transparent;
   border: none;
@@ -102,6 +105,16 @@ body {
   font-size: 1.2rem;
   border-bottom: 2px solid #fff;
   color: #fff;
+}
+
+.input-wrap i {
+  background: white;
+  color: black;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 15px;
+  cursor: pointer;
 }
 input::-webkit-input-placeholder {
   color: #ddd;

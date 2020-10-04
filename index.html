@@ -29,7 +29,8 @@
     <link rel="stylesheet" href="css/main.css" />
 
     <script src="https://kit.fontawesome.com/b92f567c30.js" crossorigin="anonymous"></script>
-    <script src="./js/main.js" defer></script>
+    <script src="./js/date.js" defer></script>
+    <script src="./js/input.js" defer></script>
   </head>
   <body>
     <!-- weather -->
@@ -37,7 +38,7 @@
     <!-- HEADER -->
     <div class="layout">
       <header>
-        <h1 class="title">Momentum</h1>
+        <h1 class="title">To Dogether</h1>
       </header>
       <!-- date -->
       <section class="today">
@@ -50,16 +51,16 @@
         <ul class="todo__items">
           <li class="todo__item">
             <span class="todo__content">낮잠을 자야한다.</span>
-            <span class="todo__date">
-              10-03, 08:03
-              <i class="fas fa-trash-alt"></i>
-            </span>
+            <i class="fas fa-trash-alt delete"></i>
           </li>
           <div class="partition"></div>
         </ul>
       </section>
       <!-- to-do-Input -->
-      <section class="input-wrap"><input type="text" / placeholder="Write a to do here!"></section>
+      <section class="input-wrap">
+        <input type="text" / placeholder="Write a to do here!">
+        <i class="fas fa-plus add"></i>
+      </section>
     </div>
   </body>
 </html>

@@ -26,13 +26,9 @@ function getPresentTime() {
   minute = minute < 10 ? `0${minute}` : minute;
   second = second < 10 ? `0${second}` : second;
 
-  todayDate.textContent = `${year}-${month}-${date}`;
+  todayDate.textContent = `${year}-${month}-${date} ${day}`;
   todayTime.textContent = `${ampm} ${hour}:${minute}:${second}`;
   setTimeout(getPresentTime, 1000);
 }
 
-function init() {
-  getPresentTime();
-}
-
-init();
+getPresentTime();
