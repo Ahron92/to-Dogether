@@ -24,6 +24,15 @@ body {
   transform: translate(-50%, -50%);
 }
 
+/* weather */
+
+.weather {
+  margin: 15px 10px;
+  font-size: 1.2rem;
+  float: right;
+  font-weight: 700;
+}
+
 /* HEADER */
 .title {
   color: #fff;
@@ -31,13 +40,13 @@ body {
   margin: 1rem 3rem;
 }
 
-/* weather */
-.weather .date {
+/* today */
+.today .date {
   font-size: 2.4em;
   margin: 0.5rem;
 }
 
-.weather .time {
+.today .time {
   font-size: 1.6em;
 }
 
@@ -95,13 +104,13 @@ body {
   color: #fff;
 }
 input::-webkit-input-placeholder {
-  color: #fff;
+  color: #ddd;
 }
 
 input::-ms-input-placeholder {
-  color: #fff;
+  color: #ddd;
 }
 
 input::-moz-input-placeholder {
-  color: #fff;
+  color: #ddd;
 }
