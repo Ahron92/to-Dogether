@@ -31,6 +31,8 @@ function createItem() {
   item.appendChild(delBtn);
 
   input.value = "";
+  input.focus();
+  item.scrollIntoView({ behavior: "smooth" });
   countId++;
 }
 
