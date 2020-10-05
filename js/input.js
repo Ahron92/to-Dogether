@@ -4,9 +4,9 @@ const input = document.querySelector(".input-wrap input");
 const inputBtn = document.querySelector(".input-wrap i");
 const items = document.querySelector(".todo__items");
 let countId = 0;
+let localData = [];
 
-function createItem() {
-  const text = input.value;
+function createItem(text) {
   if (text === "") {
     return;
   }
@@ -30,26 +30,64 @@ function createItem() {
   item.appendChild(content);
   item.appendChild(delBtn);
 
-  input.value = "";
+  const toDoObj = {
+    text: text,
+  };
+  localData.push(toDoObj);
+
   input.focus();
   item.scrollIntoView({ behavior: "smooth" });
+
+  saveTodo();
+  input.value = "";
   countId++;
+}
+
+function saveTodo() {
+  localStorage.removeItem("itemList");
+  localStorage.setItem("itemList", JSON.stringify(localData));
+}
+function loadTodo() {
+  const load = JSON.parse(localStorage.getItem("itemList"));
+  if (load !== null) {
+    load.forEach((itemList) => {
+      createItem(itemList.text);
+    });
+  }
+}
+
+function init() {
+  loadTodo();
 }
 
 input.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
-    createItem();
+    createItem(input.value);
   }
 });
 
-inputBtn.addEventListener("click", createItem);
+inputBtn.addEventListener("click", () => {
+  createItem(input.value);
+});
 
 items.addEventListener("click", (event) => {
   const target = event.target.dataset.id;
   if (target && event.target.classList[2] == "delete") {
     const deleteItem = document.querySelector(`.todo__item[data-id="${target}"]`);
+    const text = document.querySelector(`.todo__item[data-id="${target}"] .todo__content`);
     const sibling = document.querySelector(`.todo__item[data-id="${target}"] + .partition`);
+    const removeText = text.textContent;
+    localData.forEach((key, index) => {
+      if (key.text === removeText) {
+        console.log(index);
+        localData.splice(index, 1);
+        saveTodo();
+      }
+    });
+
     deleteItem.remove();
     sibling.remove();
   }
 });
+
+init();
