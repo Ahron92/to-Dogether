@@ -79,7 +79,6 @@ items.addEventListener("click", (event) => {
     const removeText = text.textContent;
     localData.forEach((key, index) => {
       if (key.text === removeText) {
-        console.log(index);
         localData.splice(index, 1);
         saveTodo();
       }
