@@ -46,7 +46,7 @@ function getWeather(lat, lon) {
     .then((json) => {
       const temperature = json.main.temp;
       const main = json.weather[0].main;
-      weather.textContent = `${temperature}도 ${main}`;
+      weather.innerHTML = `${temperature} &deg;C ${main}`;
     });
 }
 

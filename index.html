@@ -31,21 +31,32 @@
     <script src="https://kit.fontawesome.com/b92f567c30.js" crossorigin="anonymous"></script>
     <script src="./js/date.js" defer></script>
     <script src="./js/input.js" defer></script>
-    <script src="./js/background.js" defer></script>
     <script src="./js/weather.js" defer></script>
   </head>
   <body>
     <!-- weather -->
     <section class="weather"></section>
-    <!-- HEADER -->
+    <!-- Clock image -->
     <div class="layout">
+      <section class="clock">
+        <div class="hour">
+          <div class="hr" id="hr"></div>
+        </div>
+        <div class="min">
+          <div class="mn" id="mn"></div>
+        </div>
+        <div class="sec">
+          <div class="sc" id="sc"></div>
+        </div>
+      </section>
+      <!-- HEADER -->
       <header>
         <h1 class="title">To Dogether</h1>
       </header>
       <!-- date -->
       <section class="today">
-        <div class="date">2020-10-03</div>
-        <div class="time">오후 12:11</div>
+        <div class="date"></div>
+        <div class="time"></div>
       </section>
       <!-- To-do-lists -->
       <section class="todo">

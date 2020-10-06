@@ -15,6 +15,7 @@ function getPresentTime() {
   let hour = today.getHours();
   let minute = today.getMinutes();
   let second = today.getSeconds();
+  clockImage(hour, minute, second);
 
   const ampm = hour > 12 ? "오후" : "오전";
   hour %= 12;
@@ -29,6 +30,21 @@ function getPresentTime() {
   todayDate.textContent = `${year}-${month}-${date} ${day}`;
   todayTime.textContent = `${ampm} ${hour}:${minute}:${second}`;
   setTimeout(getPresentTime, 1000);
+}
+
+function clockImage(hour, minute, second) {
+  const deg = 6;
+  const hr = document.querySelector("#hr");
+  const mn = document.querySelector("#mn");
+  const sc = document.querySelector("#sc");
+
+  let hrHand = hour * deg * 5;
+  let mnHand = minute * deg;
+  let scHand = second * deg;
+
+  hr.style.transform = `rotateZ(${hrHand + mnHand / 12}deg)`;
+  mn.style.transform = `rotateZ(${mnHand}deg)`;
+  sc.style.transform = `rotateZ(${scHand}deg)`;
 }
 
 getPresentTime();
